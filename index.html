@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dark Web: Understanding the Hidden Internet</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        
+        #presentation {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        
+        .slide {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 40px;
+            box-sizing: border-box;
+            display: none;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            overflow-y: auto;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        h1 {
+            color: #4a8fe7;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #5eead4;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        p, li {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            color: #ff7e67;
+            font-weight: bold;
+        }
+        
+        .content-box {
+            background-color: rgba(40, 44, 52, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #4a8fe7;
+        }
+        
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 100;
+        }
+        
+        button {
+            background-color: #4a8fe7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #3a7fd7;
+        }
+        
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: #4a8fe7;
+            transition: width 0.3s;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .image-placeholder {
+            background-color: #2c2c3a;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #5eead4;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+        }
+        
+        .warning {
+            background-color: rgba(255, 76, 76, 0.1);
+            border-left: 4px solid #ff4c4c;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .note {
+            background-color: rgba(94, 234, 212, 0.1);
+            border-left: 4px solid #5eead4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(40, 44, 52, 0.7);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>The Dark Web</h1>
+            <h2 style="text-align: center;">A Guide to the Hidden Side of the Internet</h2>
+            <div class="image-container">
+                <div class="image-placeholder">
+                    [Visualization of layered internet structure]
+                </div>
+            </div>
+            <div class="content-box">
+                <p>This educational presentation explains what the Dark Web really is, separating facts from fiction, exploring its risks and legitimate uses, and answering common questions.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Internet Layers -->
+        <div class="slide">
+            <h2>Understanding Internet Layers</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="content-box">
+                        <h3>Surface Web</h3>
+                        <p>The part of the internet accessible through standard search engines like Google, representing only about <span class="highlight">4-5%</span> of the total internet.</p>
+                        <p>Examples: News sites, public social media, commercial websites</p>
+                    </div>
+                    <div class="content-box">
+                        <h3>Deep Web</h3>
+                        <p>Content not indexed by standard search engines, representing <span class="highlight">90-95%</span> of the internet.</p>
+                        <p>Examples: Email accounts, online banking, subscription services, private social media</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-box">
+                        <h3>Dark Web</h3>
+                        <p>A small portion of the internet that requires specialized software to access and is intentionally hidden.</p>
+                        <p>Represents <span class="highlight">less than 0.1%</span> of the total internet content.</p>
+                        <p>Most commonly accessed through the Tor network.</p>
+                    </div>
+                    <div class="note">
+                        <p><strong>Remember:</strong> Deep Web ≠ Dark Web. The Deep Web is mostly innocent, everyday content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: What is the Dark Web? -->
+        <div class="slide">
+            <h2>What Is the Dark Web?</h2>
+            <div class="content-box">
+                <p>The Dark Web is a part of the internet that:</p>
+                <ul>
+                    <li>Is <span class="highlight">intentionally hidden</span> and not accessible through standard browsers</li>
+                    <li>Requires <span class="highlight">specialized software</span> like Tor (The Onion Router) to access</li>
+                    <li>Uses <span class="highlight">encrypted connections</span> to ensure anonymity</li>
+                    <li>Features websites with <span class="highlight">.onion domains</span> instead of standard domains like .com or .org</li>
+                    <li>Prioritizes user <span class="highlight">privacy and anonymity</span></li>
+                </ul>
+            </div>
+            <div class="note">
+                <p>Despite its reputation, the Dark Web itself is simply a technology for anonymous communication - neither inherently good nor evil.</p>
+            </div>
+            <div class="image-container">
+                <div class="image-placeholder">
+                    [Visualization of Tor routing]
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: How Tor Works -->
+        <div class="slide">
+            <h2>How The Onion Router (Tor) Works</h2>
+            <div class="content-box">
+                <h3>Onion Routing Explained</h3>
+                <ol>
+                    <li>Your data is wrapped in <span class="highlight">multiple layers of encryption</span> (like an onion)</li>
+                    <li>Traffic bounces through at least <span class="highlight">three random nodes</span> (computers) worldwide</li>
+                    <li>Each node only knows the previous and next node, <span class="highlight">never the complete path</span></li>
+                    <li>The final node (exit node) connects to the destination website</li>
+                </ol>
+                <p>This process makes it extremely difficult to track the origin of requests or identify users.</p>
+            </div>
+            <div class="note">
+                <p>Tor was originally developed by the U.S. Naval Research Laboratory to protect U.S. intelligence communications online. It was later released as an open-source project.</p>
+            </div>
+            <div class="image-container">
+                <div class="image-placeholder">
+                    [Illustration of onion routing layers]
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Dark Web Myths vs. Facts -->
+        <div class="slide">
+            <h2>Dark Web: Myths vs. Facts</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="content-box">
+                        <h3>Myths</h3>
+                        <ul>
+                            <li><strong>Myth:</strong> Simply accessing the Dark Web is illegal</li>
+                            <li><strong>Myth:</strong> The Dark Web is exclusively used for criminal activity</li>
+                            <li><strong>Myth:</strong> The Dark Web is much larger than the Surface Web</li>
+                            <li><strong>Myth:</strong> Anyone who uses Tor is doing something suspicious</li>
+                            <li><strong>Myth:</strong> The Dark Web is completely anonymous and untraceable</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-box">
+                        <h3>Facts</h3>
+                        <ul>
+                            <li><strong>Fact:</strong> Accessing the Dark Web is legal in most countries</li>
+                            <li><strong>Fact:</strong> The Dark Web has many legitimate uses and legal content</li>
+                            <li><strong>Fact:</strong> The Dark Web is tiny compared to the Surface Web</li>
+                            <li><strong>Fact:</strong> Many journalists, activists, and privacy-conscious users use Tor</li>
+                            <li><strong>Fact:</strong> Law enforcement has successfully traced activities on the Dark Web</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Legitimate Uses -->
+        <div class="slide">
+            <h2>Legitimate Uses of the Dark Web</h2>
+            <div class="content-box">
+                <h3>Privacy and Free Speech</h3>
+                <ul>
+                    <li><span class="highlight">Political dissidents</span> safely communicating in repressive regimes</li>
+                    <li><span class="highlight">Journalists and whistleblowers</span> sharing sensitive information</li>
+                    <li><span class="highlight">Privacy-conscious individuals</span> avoiding corporate tracking</li>
+                    <li><span class="highlight">Secure communication channels</span> in countries with internet censorship</li>
+                    <li>Access to <span class="highlight">blocked media and information</span> in censored regions</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Professional & Academic Uses</h3>
+                <ul>
+                    <li><span class="highlight">Intelligence agencies</span> conducting secure operations</li>
+                    <li><span class="highlight">Law enforcement</span> monitoring criminal activities</li>
+                    <li><span class="highlight">Academic research</span> into privacy technologies</li>
+                    <li><span class="highlight">Secure corporate communications</span> and whistleblowing platforms</li>
+                </ul>
+            </div>
+            <div class="note">
+                <p>Organizations like Facebook, The New York Times, and ProPublica maintain legitimate .onion sites to protect user privacy.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Dark Web Risks -->
+        <div class="slide">
+            <h2>Risks of the Dark Web</h2>
+            <div class="warning">
+                <p><strong>Important:</strong> While the Dark Web has legitimate uses, it also hosts illegal activities. This information is provided for educational purposes only.</p>
+            </div>
+            <div class="content-box">
+                <h3>Common Threats</h3>
+                <ul>
+                    <li><span class="highlight">Malware distribution</span> - Higher concentration of malicious software</li>
+                    <li><span class="highlight">Scams and fraud</span> - Common due to anonymity and lack of regulation</li>
+                    <li><span class="highlight">Illegal marketplaces</span> - Sale of prohibited items and services</li>
+                    <li><span class="highlight">Data breaches</span> - Stolen personal information for sale</li>
+                    <li><span class="highlight">Security vulnerabilities</span> - Outdated browsers can expose users</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <p>Law enforcement agencies actively monitor the Dark Web, and many major illegal operations have been shut down over the years, including Silk Road, AlphaBay, and Hansa Market.</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: How People Access the Dark Web -->
+        <div class="slide">
+            <h2>How People Access the Dark Web</h2>
+            <div class="content-box">
+                <h3>Primary Access Methods</h3>
+                <ul>
+                    <li><span class="highlight">Tor Browser</span> - The most common method, based on Firefox</li>
+                    <li><span class="highlight">I2P (Invisible Internet Project)</span> - An alternative anonymous network</li>
+                    <li><span class="highlight">Freenet</span> - Peer-to-peer platform for censorship-resistant communication</li>
+                    <li><span class="highlight">ZeroNet</span> - Decentralized websites using Bitcoin cryptography</li>
+                </ul>
+            </div>
+            <div class="note">
+                <p><strong>Note:</strong> Simply downloading Tor Browser isn't illegal, but what you do on the Dark Web could be. Always respect laws and ethical boundaries.</p>
+            </div>
+            <div class="content-box">
+                <h3>Basic Process</h3>
+                <ol>
+                    <li>Download and install the Tor Browser</li>
+                    <li>Connect to the Tor network</li>
+                    <li>Navigate to .onion addresses or use directory sites</li>
+                    <li>Exercise extreme caution and maintain security practices</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Slide 9: Safety Measures -->
+        <div class="slide">
+            <h2>Dark Web Safety Measures</h2>
+            <div class="content-box">
+                <h3>If You Need to Use the Dark Web Safely:</h3>
+                <ul>
+                    <li>Use a <span class="highlight">dedicated device</span> or virtual machine</li>
+                    <li>Keep Tor and all software <span class="highlight">updated</span></li>
+                    <li>Run a good <span class="highlight">antivirus/anti-malware</span> program</li>
+                    <li>Consider using a <span class="highlight">VPN</span> for an added layer of privacy</li>
+                    <li><span class="highlight">Disable JavaScript</span> when possible</li>
+                    <li>Never share <span class="highlight">personal information</span></li>
+                    <li>Use <span class="highlight">cryptocurrency</span> instead of credit cards if making legal purchases</li>
+                </ul>
+            </div>
+            <div class="warning">
+                <p><strong>Remember:</strong> No technology provides perfect anonymity. Even with precautions, your actions may be traceable, especially by sophisticated actors like government agencies.</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Law Enforcement & the Dark Web -->
+        <div class="slide">
+            <h2>Law Enforcement & the Dark Web</h2>
+            <div class="content-box">
+                <h3>How Authorities Monitor the Dark Web</h3>
+                <ul>
+                    <li><span class="highlight">Undercover operations</span> - Officers posing as users or vendors</li>
+                    <li><span class="highlight">Traffic analysis</span> - Identifying patterns even in encrypted data</li>
+                    <li><span class="highlight">Vulnerability exploitation</span> - Using software flaws to reveal identities</li>
+                    <li><span class="highlight">Collaboration</span> with postal services to track physical shipments</li>
+                    <li><span class="highlight">Bitcoin tracing</span> - Following cryptocurrency transaction chains</li>
+                </ul>
+            </div>
+            <div class="note">
+                <p>Major operations like Operation Bayonet (AlphaBay), Operation Disruptor, and the takedown of Silk Road demonstrate law enforcement's growing capabilities in this space.</p>
+            </div>
+            <div class="content-box">
+                <p>In many cases, users were caught through basic operational security mistakes rather than pure technical vulnerabilities in Tor itself.</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Dark Web vs. Regular Internet -->
+        <div class="slide">
+            <h2>Dark Web vs. Regular Internet</h2>
+            <div class="two-column">
+                <div class="column">
+                    <div class="content-box">
+                        <h3>Regular Internet</h3>
+                        <ul>
+                            <li>Standard domain names (.com, .org, etc.)</li>
+                            <li>Fast loading speeds</li>
+                            <li>Indexed by search engines</li>
+                            <li>User tracking is common</li>
+                            <li>Generally reliable websites</li>
+                            <li>Centralized governance</li>
+                            <li>Connection is traceable to you</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-box">
+                        <h3>Dark Web</h3>
+                        <ul>
+                            <li>.onion domain names (random characters)</li>
+                            <li>Slower loading speeds</li>
+                            <li>Not indexed by standard search engines</li>
+                            <li>Designed to minimize tracking</li>
+                            <li>Less reliable, sites come and go quickly</li>
+                            <li>Decentralized with no governing authority</li>
+                            <li>Multiple layers of anonymity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="note">
+                <p>The Dark Web offers much greater privacy but at the cost of convenience, speed, and reliability.</p>
+            </div>
+        </div>
+
+        <!-- Slide 12: Common Questions -->
+        <div class="slide">
+            <h2>Dark Web FAQs</h2>
+            <div class="content-box">
+                <h3>Frequently Asked Questions</h3>
+                <p><strong>Is it illegal to access the Dark Web?</strong><br>
+                No, accessing the Dark Web itself is not illegal in most countries. What's illegal is engaging in illegal activities, regardless of what part of the internet you're on.</p>
+                
+                <p><strong>Is my personal information already on the Dark Web?</strong><br>
+                If you've been part of a data breach, it's possible. Various services can check if your email has been compromised.</p>
+                
+                <p><strong>Will I be hacked just by visiting the Dark Web?</strong><br>
+                Not necessarily, but the risk is higher than on the regular web. Following proper security measures significantly reduces risks.</p>
+                
+                <p><strong>Can anyone track what I do on the Dark Web?</strong><br>
+                While Tor provides strong anonymity, perfect anonymity doesn't exist. Sophisticated actors like government agencies can sometimes track activities, especially if users make operational security mistakes.</p>
+            </div>
+        </div>
+
+        <!-- Slide 13: Conclusion -->
+        <div class="slide">
+            <h2>Conclusion: The Reality of the Dark Web</h2>
+            <div class="content-box">
+                <ul>
+                    <li>The Dark Web is a <span class="highlight">tool for anonymity</span>, not inherently good or evil</li>
+                    <li>It represents a <span class="highlight">tiny fraction</span> of the internet</li>
+                    <li>It has <span class="highlight">legitimate uses</span> for privacy, journalism, and avoiding censorship</li>
+                    <li>It also hosts <span class="highlight">illegal activities</span> and requires caution</li>
+                    <li><span class="highlight">Perfect anonymity</span> doesn't exist - law enforcement has successfully tracked criminal activity</li>
+                </ul>
+            </div>
+            <div class="note">
+                <p>Understanding the Dark Web is important in our digital age, but approaching it with knowledge, caution, and ethical boundaries is essential.</p>
+            </div>
+            <div class="content-box">
+                <h3>Final Thoughts</h3>
+                <p>The technologies that power the Dark Web were developed to protect privacy and freedom of information - noble goals that continue to be relevant today. Like many tools, they can be used for both good and harmful purposes.</p>
+            </div>
+        </div>
+
+        <!-- Slide 14: Resources -->
+        <div class="slide">
+            <h2>Resources & Further Learning</h2>
+            <div class="content-box">
+                <h3>Educational Resources</h3>
+                <ul>
+                    <li>The Tor Project's official website for accurate information</li>
+                    <li>Electronic Frontier Foundation (EFF) guides on digital privacy</li>
+                    <li>Books: "Dark Web: Exploring and Data Mining the Dark Side of the Web" by Xingan Li</li>
+                    <li>Academic papers on anonymous communication networks</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Safety Resources</h3>
+                <ul>
+                    <li>Have I Been Pwned - Check if your data has been compromised</li>
+                    <li>Digital security guides from organizations like Freedom of the Press Foundation</li>
+                    <li>Privacy tools and resources from Privacy Tools IO</li>
+                </ul>
+            </div>
+            <div class="note">
+                <p>This presentation was created for educational purposes only. Always respect legal and ethical boundaries when exploring internet technologies.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation">
+            <button id="prevSlide">Previous</button>
+            <button id="nextSlide">Next</button>
+        </div>
+        
+        <div class="progress" id="progress"></div>
+        <div class="slide-counter" id="slideCounter">1/14</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.getElementById('prevSlide');
+            const nextButton = document.getElementById('nextSlide');
+            const progress = document.getElementById('progress');
+            const slideCounter = document.getElementById('slideCounter');
+            let currentSlide = 0;
+            
+            // Initialize progress bar and counter
+            updateProgressAndCounter();
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+            
+            // Button navigation
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+                currentSlide = index;
+                updateProgressAndCounter();
+            }
+            
+            function nextSlide() {
+                if (currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            }
+            
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            }
+            
+            function updateProgressAndCounter() {
+                const progressWidth = ((currentSlide + 1) / slides.length) * 100;
+                progress.style.width = `${progressWidth}%`;
+                slideCounter.textContent = `${currentSlide + 1}/${slides.length}`;
+                
+                // Disable/enable buttons as needed
+                prevButton.disabled = currentSlide === 0;
+                nextButton.disabled = currentSlide === slides.length - 1;
+            }
+        });
+    </script>
+</body>
+</html>
