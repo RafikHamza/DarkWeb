@@ -233,6 +233,159 @@
             </div>
         </div>
 
+    <!-- Slide 3.1: Browsing Data Collected -->
+<div class="slide">
+    <h2>Regular Browsing vs. Tor: Data Collection Comparison</h2>
+    <div class="comparison-container">
+        <div class="column">
+            <h3 class="regular">Regular Browser</h3>
+            <div class="content-box red">
+                <ul>
+                    <li><span class="highlight">IP Address:</span> Directly visible to websites, revealing your location</li>
+                    <li><span class="highlight">Cookies:</span> Track you across websites, building profiles of your activity</li>
+                    <li><span class="highlight">Browser Fingerprint:</span> Uniquely identifies your device across sessions</li>
+                    <li><span class="highlight">Search History:</span> Stored by search engines and linked to your identity</li>
+                    <li><span class="highlight">Login Credentials:</span> Often stored and potentially vulnerable</li>
+                    <li><span class="highlight">Website Data:</span> Pages visited, time spent, clicks tracked</li>
+                    <li><span class="highlight">Form Data:</span> Information you enter may be captured before submission</li>
+                </ul>
+            </div>
+        </div>
+        <div class="column">
+            <h3 class="tor">Tor Browser</h3>
+            <div class="content-box green">
+                <ul>
+                    <li><span class="highlight">IP Address:</span> Hidden through multiple layers of encryption</li>
+                    <li><span class="highlight">Cookies:</span> Isolated to sessions and cleared automatically</li>
+                    <li><span class="highlight">Browser Fingerprint:</span> Standardized to look identical to other Tor users</li>
+                    <li><span class="highlight">Search History:</span> Not persistently connected to your identity</li>
+                    <li><span class="highlight">Login Credentials:</span> Not automatically saved by default</li>
+                    <li><span class="highlight">Website Data:</span> Minimal tracking due to script blocking</li>
+                    <li><span class="highlight">Form Data:</span> Protected from invisible tracking scripts</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p>Regular browsers prioritize convenience while Tor Browser prioritizes privacy. The tradeoff is typically speed and some website functionality.</p>
+    </div>
+    <div class="image-container">
+        <img src="3.1.png" alt="Comparison of data collection between regular and Tor browsing" style="max-width: 100%; height: auto;">
+        <p style="text-align:center; font-size:small;">
+          Data flow visualization: Regular browser (left) vs. Tor Browser (right)
+        </p>
+    </div>
+</div>
+
+<!-- Slide 3.2: Browser Fingerprinting -->
+<div class="slide">
+    <h2>Browser Fingerprinting: The Invisible Tracker</h2>
+    <div class="content-box">
+        <p>Your browser reveals a unique combination of characteristics that can identify you:</p>
+        <ul>
+            <li><span class="highlight">Installed fonts</span> (can reveal your profession or software)</li>
+            <li><span class="highlight">Browser plugins</span> (a unique combination like a fingerprint)</li>
+            <li><span class="highlight">Screen resolution</span> and color depth</li>
+            <li><span class="highlight">Time zone</span> and language settings</li>
+            <li><span class="highlight">Canvas fingerprinting</span> (uses HTML5 to create invisible unique IDs)</li>
+            <li><span class="highlight">WebRTC</span> can leak your true IP even behind VPNs</li>
+            <li><span class="highlight">Hardware details</span> like CPU and graphics capabilities</li>
+        </ul>
+    </div>
+    <div class="comparison-container">
+        <div class="column">
+            <h3 class="regular">Regular Browser</h3>
+            <div class="content-box red">
+                <p>Usually <span class="highlight">unique among millions</span> of users</p>
+                <p>Persistent across private browsing and cookie clearing</p>
+            </div>
+        </div>
+        <div class="column">
+            <h3 class="tor">Tor Browser</h3>
+            <div class="content-box green">
+                <p>Designed to make all users look <span class="highlight">identical</span></p>
+                <p>Blocks fingerprinting technologies by default</p>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p>Activity: Visit AmIUnique.org or Panopticlick with both browsers to see the difference in fingerprinting vulnerability.</p>
+    </div>
+</div>
+
+<!-- Slide 3.3: Tracking Ecosystem -->
+<div class="slide">
+    <h2>The Web Tracking Ecosystem</h2>
+    <div class="content-box">
+        <p>Your browsing data is collected, shared, and monetized by:</p>
+        <ul>
+            <li><span class="highlight">Website owners</span> - Analytics about how you use their site</li>
+            <li><span class="highlight">Advertisers</span> - Targeting ads based on your interests and behavior</li>
+            <li><span class="highlight">Data brokers</span> - Aggregating your information from multiple sources</li>
+            <li><span class="highlight">Social media platforms</span> - Tracking via "Like" buttons even when not logged in</li>
+            <li><span class="highlight">ISPs</span> - Can see all non-encrypted traffic passing through their network</li>
+            <li><span class="highlight">Government agencies</span> - May collect or request data from companies</li>
+        </ul>
+    </div>
+    <div class="comparison-container">
+        <div class="column">
+            <h3 class="regular">Regular Browser</h3>
+            <div class="content-box red">
+                <p>Average website connects to <span class="highlight">70+ third-party trackers</span></p>
+                <p>Your data can be sold multiple times without your knowledge</p>
+            </div>
+        </div>
+        <div class="column">
+            <h3 class="tor">Tor Browser</h3>
+            <div class="content-box green">
+                <p>Blocks most third-party connections by default</p>
+                <p>Prevents creation of persistent tracking profiles</p>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p>Class activity: Install Privacy Badger on a regular browser and compare the number of trackers blocked versus the same sites in Tor Browser.</p>
+    </div>
+</div>
+
+<!-- Slide 3.4: Practical Privacy -->
+<div class="slide">
+    <h2>Practical Privacy: When to Use Tor</h2>
+    <div class="comparison-container">
+        <div class="column">
+            <h3>Consider Using Tor When:</h3>
+            <div class="content-box blue">
+                <ul>
+                    <li>Researching sensitive topics</li>
+                    <li>Accessing information in censored regions</li>
+                    <li>Protecting journalistic sources</li>
+                    <li>Avoiding location-based price discrimination</li>
+                    <li>Preventing targeted marketing profiles</li>
+                    <li>Maintaining anonymity in online discussions</li>
+                    <li>Accessing legitimate .onion resources</li>
+                </ul>
+            </div>
+        </div>
+        <div class="column">
+            <h3>Regular Browser May Be Better For:</h3>
+            <div class="content-box yellow">
+                <ul>
+                    <li>Banking and financial transactions</li>
+                    <li>Streaming high-definition content</li>
+                    <li>Activities requiring maximum speed</li>
+                    <li>Sites that block Tor exit nodes</li>
+                    <li>When personalization is beneficial</li>
+                    <li>When login credentials must be remembered</li>
+                    <li>Accessing region-specific content</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="note">
+        <p>Privacy is contextual - different tools serve different privacy needs. Tor provides strong anonymity but with tradeoffs in performance and convenience.</p>
+    </div>
+</div>
+
         <!-- Slide 4: How Tor Works -->
         <div class="slide">
             <h2>How The Onion Router (Tor) Works</h2>
